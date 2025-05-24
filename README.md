@@ -35,7 +35,7 @@ Getting started with Surfle is super easy. Once we’re officially live in the C
 
 ---
 
-## 🌀 Add Your Site to the Surfle Webring
+## ➕ Add Your Site to the Surfle Webring
 
 Want to join the Surfle webring and be part of a flow of cool, independent websites? Here’s how to add your site:
 
