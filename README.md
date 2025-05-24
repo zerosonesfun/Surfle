@@ -6,8 +6,32 @@ A Chromium Webring browser extension.
 ---
 
 A Webring is a loop or chain of websites connected together that you can easily browse through. Surfle has two modes:
-1. Surfle Mode - Browse through the official Surfle Webring.
-2. Bookmarks Mode - Any bookmarks folder with "webring" in the name can be selected as the list of websites you browse through.
+1. **Surfle Mode** - Browse through the official Surfle Webring.
+2. **Bookmarks Mode** - Any bookmarks folder with "webring" in the name can be selected as the list of websites you browse through.
+
+---
+## How to Install & Use
+Getting started with Surfle is super easy. Once we’re officially live in the Chrome Web Store, here’s how to install it:
+
+### 🔧 Install in Seconds
+
+1. **Go to the Chrome Web Store**
+   Visit the Surfle extension page here:
+   [chrome.google.com/webstore/detail/surfle/your-extension-id](https://chrome.google.com/webstore/detail/surfle/your-extension-id)
+   (Link will be updated when live!)
+
+2. **Click “Add to Chrome”**
+   A confirmation popup will appear. Click **Add Extension**.
+
+3. **That’s it!**
+   Surfle will now appear as a small turtle 🐢 icon in your browser toolbar.
+
+### 🌀 Start Surfing
+
+1. Click the **Surfle** icon to open the popup.
+2. Toggle **Surfle Mode** on to surf the official webring.
+3. Or switch to **Bookmarks Mode** and pick your own webring-style folder.
+4. Click **Start Surfle** and use keyboard arrows (← →) or mobile taps to navigate.
 
 ---
 
