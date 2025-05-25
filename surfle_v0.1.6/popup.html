@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surfle</title>
+  <style>
+    body { font-family: system-ui, sans-serif; width:240px; padding:10px; }
+    label, select, button { display:block; margin:8px 0; width:100%; }
+    select, button { padding:6px; }
+    button { font-weight:bold; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <label><input type="checkbox" id="surfleMode"> Surfle Mode (webring)</label>
+  <label><input type="checkbox" id="bookmarksMode"> Bookmarks Mode</label>
+  <select id="bookmarksFolderSelect" style="display:none;"></select>
+  <button id="startBtn">Start Surfle</button>
+  <button id="prevBtn" disabled>Previous</button>
+  <button id="nextBtn" disabled>Next</button>
+  <script src="popup.js"></script>
+</body>
+</html>
