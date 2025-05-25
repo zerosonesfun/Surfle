@@ -44,7 +44,9 @@ Create a folder of bookmarks that your friends might like, name the folder webri
 
 ## ➕ Add Your Site to the Surfle Webring
 
-Want to join the Surfle webring and be part of a flow of cool, independent websites? Here’s how to add your site:
+Want to join the Surfle webring and be part of a flow of cool, independent websites? Here’s how to add your site.
+
+[Reply to this discussion thread](https://github.com/zerosonesfun/Surfle/discussions/4), **OR**:
 
 ### 🌊 Super Simple Steps
 
@@ -72,15 +74,17 @@ Want to join the Surfle webring and be part of a flow of cool, independent websi
      ```
 
    ✅ Make sure to include the full URL (with `https://`)
+   
    ✅ Your site must be added to the end of the current list
+   
    ✅ Don't forget to add a comma to the URL above yours and put quotations around yours
 
-4. **Commit your changes**
+5. **Commit your changes**
 
    * Scroll down and write a quick message like: `Added my site to webring`
    * Click **Commit changes**
 
-5. **Open a Pull Request**
+6. **Open a Pull Request**
 
    * Visit the main Surfle repo
    * GitHub should show a button: **Compare & pull request** — click it
