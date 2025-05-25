@@ -12,6 +12,7 @@ A Webring is a loop or chain of websites connected together that you can easily 
 [Join our discussions](https://github.com/zerosonesfun/Surfle/discussions)
 
 ---
+
 ## ℹ️ How to Install & Use
 Getting started with Surfle is super easy. Once we’re officially live in the Chrome Web Store, here’s how to install it:
 
@@ -34,6 +35,10 @@ Getting started with Surfle is super easy. Once we’re officially live in the C
 2. Toggle **Surfle Mode** on to surf the official webring.
 3. Or switch to **Bookmarks Mode** and pick your own webring folder. Any browser bookmarks folder with webring in the name is selectable.
 4. Click **Start Surfle** and use keyboard arrows (← →) or mobile taps to navigate.
+
+### 😎 Create a Webring Mix
+
+Create a folder of bookmarks that your friends might like, name the folder webring-whatever (the webring part is important), and export. Send it to a friend who also uses Surfle. How do you export? This could be a feature in a future version of Surfle, but for you you can search the Chrome Extension store for "export bookmarks" and use something [like this](https://chromewebstore.google.com/detail/bookmark-importexport/gdhpeilfkeeajillmcncaelnppiakjhn).
 
 ---
 
