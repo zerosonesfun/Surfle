@@ -9,7 +9,7 @@ A Webring is a loop or chain of websites connected together that you can easily 
 1. **Surfle Mode** - Browse through the official Surfle Webring.
 2. **Bookmarks Mode** - Any bookmarks folder with "webring" in the name can be selected as the list of websites you browse through.
 
-[Join our discussions](https://github.com/zerosonesfun/Surfle/discussions)!
+[Join our discussions](https://github.com/zerosonesfun/Surfle/discussions)
 
 ---
 ## ℹ️ How to Install & Use
