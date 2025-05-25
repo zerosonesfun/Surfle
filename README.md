@@ -1,5 +1,5 @@
 # Surfle
-A Chromium Webring browser extension.
+A Chromium Webring browser extension. [Download the extension zip file](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fzerosonesfun%2FSurfle%2Ftree%2Fmain%2Fextension)
 
 ![Surfle Logo](https://raw.githubusercontent.com/zerosonesfun/surfle/refs/heads/main/surfle-200.png)
 
