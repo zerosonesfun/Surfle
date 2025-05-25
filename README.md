@@ -38,7 +38,7 @@ Getting started with Surfle is super easy. Once we’re officially live in the C
 
 ### 😎 Create a Webring Mix
 
-Create a folder of bookmarks that your friends might like, name the folder webring-whatever (the webring part is important), and export. Send it to a friend who also uses Surfle. How do you export? This could be a feature in a future version of Surfle, but for you you can search the Chrome Extension store for "export bookmarks" and use something [like this](https://chromewebstore.google.com/detail/bookmark-importexport/gdhpeilfkeeajillmcncaelnppiakjhn).
+Create a folder of bookmarks that your friends might like, name the folder webring-whatever (the webring part is important), and export. Send it to a friend who also uses Surfle. How do you export? This could be a feature in a future version of Surfle, but for now you can search the Chrome Extension store for "export bookmarks" and use something [like this](https://chromewebstore.google.com/detail/bookmark-importexport/gdhpeilfkeeajillmcncaelnppiakjhn).
 
 ---
 
