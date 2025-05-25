@@ -9,6 +9,8 @@ A Webring is a loop or chain of websites connected together that you can easily 
 1. **Surfle Mode** - Browse through the official Surfle Webring.
 2. **Bookmarks Mode** - Any bookmarks folder with "webring" in the name can be selected as the list of websites you browse through.
 
+[Join our discussions](https://github.com/zerosonesfun/Surfle/discussions)!
+
 ---
 ## ℹ️ How to Install & Use
 Getting started with Surfle is super easy. Once we’re officially live in the Chrome Web Store, here’s how to install it:
@@ -30,7 +32,7 @@ Getting started with Surfle is super easy. Once we’re officially live in the C
 
 1. Click the **Surfle** icon to open the popup.
 2. Toggle **Surfle Mode** on to surf the official webring.
-3. Or switch to **Bookmarks Mode** and pick your own webring-style folder.
+3. Or switch to **Bookmarks Mode** and pick your own webring folder. Any browser bookmarks folder with webring in the name is selectable.
 4. Click **Start Surfle** and use keyboard arrows (← →) or mobile taps to navigate.
 
 ---
