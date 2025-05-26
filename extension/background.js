@@ -55,11 +55,9 @@ async function loadBookmarks() {
   if (!selectedFolderId) return;
   try {
     const children = await getChildrenAsync(selectedFolderId);
-    if (Array.isArray(children)) {
-      bookmarksSites = children.filter(n => n.url);
-    } else {
-      bookmarksSites = [];
-    }
+    bookmarksSites = Array.isArray(children)
+      ? children.filter(n => n.url)
+      : [];
   } catch (e) {
     console.error('loadBookmarks error', e);
     bookmarksSites = [];
@@ -75,15 +73,17 @@ function openSiteAtIndex(idx) {
   if (!started) return;
 
   if (surfleMode) {
-    if (sites.length) {
-      currentIndex = randomMode ? getRandomIndex(sites.length) : (idx + sites.length) % sites.length;
-      chrome.tabs.update({ url: sites[currentIndex] });
-    }
+    if (!sites.length) return;
+    currentIndex = randomMode
+      ? getRandomIndex(sites.length)
+      : (idx + sites.length) % sites.length;
+    chrome.tabs.update({ url: sites[currentIndex] });
   } else {
-    if (bookmarksSites.length) {
-      currentIndex = randomMode ? getRandomIndex(bookmarksSites.length) : (idx + bookmarksSites.length) % bookmarksSites.length;
-      chrome.tabs.update({ url: bookmarksSites[currentIndex].url });
-    }
+    if (!bookmarksSites.length) return;
+    currentIndex = randomMode
+      ? getRandomIndex(bookmarksSites.length)
+      : (idx + bookmarksSites.length) % bookmarksSites.length;
+    chrome.tabs.update({ url: bookmarksSites[currentIndex].url });
   }
 }
 
@@ -125,7 +125,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         sendResponse({ success: true });
         break;
 
-      case 'setRandomMode':
+      case 'toggleRandomMode':
         randomMode = msg.value;
         chrome.storage.sync.set({ randomMode });
         sendResponse({ success: true });
