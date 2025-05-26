@@ -1,5 +1,6 @@
 # Surfle
 A Chromium Webring browser extension.
+
 ![Surfle Logo](https://raw.githubusercontent.com/zerosonesfun/surfle/refs/heads/main/surfle-200.png)
 
 [Install Surfle](https://chromewebstore.google.com/detail/surfle/nhejdgahknojgpbljmckhcmgdkelmknn) (Desktop only)
@@ -23,8 +24,7 @@ Getting started with Surfle is super easy. Once we’re officially live in the C
 
 1. **Go to the Chrome Web Store**
    Visit the Surfle extension page here:
-   [chrome.google.com/webstore/detail/surfle/your-extension-id](https://chrome.google.com/webstore/detail/surfle/your-extension-id)
-   (Link will be updated when live!)
+   [https://chromewebstore.google.com/detail/surfle/nhejdgahknojgpbljmckhcmgdkelmknn](https://chromewebstore.google.com/detail/surfle/nhejdgahknojgpbljmckhcmgdkelmknn)
 
 2. **Click “Add to Chrome”**
    A confirmation popup will appear. Click **Add Extension**.
