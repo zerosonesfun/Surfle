@@ -38,7 +38,7 @@ Getting started with Surfle is super easy and safe.
 2. Toggle **Surfle Mode** on to surf the official webring.
 3. Or switch to **Bookmarks Mode** and pick your own webring folder. Any browser bookmarks folder with webring in the name is selectable.
 4. Click **Start Surfle** and use keyboard arrows (← →) or clicks to navigate. Using the keyboard arrows is easiest, but you can also click 3 times quickly for next and 4 times quickly for previous.
-5. Check off Random Mode if you don't want to view the sites in order.
+5. Check off **Random Mode** if you don't want to view the sites in order.
 
 ### 😎 Create a Webring Mix
 
