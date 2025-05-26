@@ -1,7 +1,7 @@
 const $ = id => document.getElementById(id);
 const surfleCheckbox = $('surfleMode'), bookmarksCheckbox = $('bookmarksMode');
 const folderSelect = $('bookmarksFolderSelect'), startBtn = $('startBtn');
-const prevBtn = $('prevBtn'), nextBtn = $('nextBtn');
+const prevBtn = $('prevBtn'), nextBtn = $('nextBtn'), randomCheckbox = $('randomMode');
 
 function updateUI(started) {
   surfleCheckbox.disabled = started;
@@ -11,6 +11,7 @@ function updateUI(started) {
   prevBtn.disabled = !started;
   nextBtn.disabled = !started;
   folderSelect.style.display = bookmarksCheckbox.checked ? 'block' : 'none';
+  randomCheckbox.disabled = started;
 }
 
 function loadFolders() {
@@ -54,16 +55,25 @@ bookmarksCheckbox.addEventListener('change', () => {
 folderSelect.addEventListener('change', () => {
   chrome.runtime.sendMessage({ action: 'setSelectedFolder', folderId: folderSelect.value });
 });
+randomCheckbox.addEventListener('change', () => {
+  chrome.runtime.sendMessage({ action: 'toggleRandomMode', value: randomCheckbox.checked });
+});
+
 startBtn.addEventListener('click', () => {
-  chrome.runtime.sendMessage({ action: 'toggleStart' }, res => updateUI(res.started));
+  chrome.runtime.sendMessage({ action: 'toggleStart' }, res => {
+    if (res && typeof res.started !== 'undefined') {
+      updateUI(res.started);
+    }
+  });
 });
 prevBtn.addEventListener('click', () => chrome.runtime.sendMessage({ action: 'goPrev' }));
 nextBtn.addEventListener('click', () => chrome.runtime.sendMessage({ action: 'goNext' }));
 
-chrome.storage.sync.get(['surfleMode', 'started'], d => {
+chrome.storage.sync.get(['surfleMode', 'started', 'randomMode'], d => {
   const mode = d.surfleMode !== false;
   surfleCheckbox.checked = mode;
   bookmarksCheckbox.checked = !mode;
+  randomCheckbox.checked = d.randomMode || false;
   updateUI(d.started || false);
   if (bookmarksCheckbox.checked) loadFolders();
 });
