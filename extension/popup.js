@@ -1,17 +1,21 @@
 const $ = id => document.getElementById(id);
-const surfleCheckbox = $('surfleMode'), bookmarksCheckbox = $('bookmarksMode');
-const folderSelect = $('bookmarksFolderSelect'), startBtn = $('startBtn');
-const prevBtn = $('prevBtn'), nextBtn = $('nextBtn'), randomCheckbox = $('randomMode');
+const surfleCheckbox   = $('surfleMode');
+const bookmarksCheckbox= $('bookmarksMode');
+const randomCheckbox   = $('randomMode');
+const folderSelect     = $('bookmarksFolderSelect');
+const startBtn         = $('startBtn');
+const prevBtn          = $('prevBtn');
+const nextBtn          = $('nextBtn');
 
 function updateUI(started) {
-  surfleCheckbox.disabled = started;
+  surfleCheckbox.disabled    = started;
   bookmarksCheckbox.disabled = started;
-  folderSelect.disabled = !bookmarksCheckbox.checked || started;
-  startBtn.textContent = started ? 'Stop Surfle' : 'Start Surfle';
-  prevBtn.disabled = !started;
-  nextBtn.disabled = !started;
+  randomCheckbox.disabled    = started;
+  folderSelect.disabled      = !bookmarksCheckbox.checked || started;
+  startBtn.textContent       = started ? 'Stop Surfle' : 'Start Surfle';
+  prevBtn.disabled           = !started;
+  nextBtn.disabled           = !started;
   folderSelect.style.display = bookmarksCheckbox.checked ? 'block' : 'none';
-  randomCheckbox.disabled = started;
 }
 
 function loadFolders() {
@@ -25,9 +29,9 @@ function loadFolders() {
         o.value = f.id; o.textContent = f.title;
         folderSelect.appendChild(o);
       });
-      chrome.storage.sync.get('selectedFolderId', d => {
-        if (d.selectedFolderId && folders.find(f => f.id === d.selectedFolderId)) {
-          folderSelect.value = d.selectedFolderId;
+      chrome.storage.sync.get('selectedFolderId', data => {
+        if (data.selectedFolderId && folders.some(f => f.id === data.selectedFolderId)) {
+          folderSelect.value = data.selectedFolderId;
         } else {
           folderSelect.value = folders[0].id;
           chrome.runtime.sendMessage({ action: 'setSelectedFolder', folderId: folders[0].id });
@@ -46,17 +50,20 @@ surfleCheckbox.addEventListener('change', () => {
   chrome.runtime.sendMessage({ action: 'toggleSurfleMode', value: surfleCheckbox.checked });
   updateUI(false);
 });
+
 bookmarksCheckbox.addEventListener('change', () => {
   if (bookmarksCheckbox.checked) surfleCheckbox.checked = false;
   chrome.runtime.sendMessage({ action: 'toggleSurfleMode', value: !bookmarksCheckbox.checked });
   updateUI(false);
   if (bookmarksCheckbox.checked) loadFolders();
 });
-folderSelect.addEventListener('change', () => {
-  chrome.runtime.sendMessage({ action: 'setSelectedFolder', folderId: folderSelect.value });
-});
+
 randomCheckbox.addEventListener('change', () => {
   chrome.runtime.sendMessage({ action: 'toggleRandomMode', value: randomCheckbox.checked });
+});
+
+folderSelect.addEventListener('change', () => {
+  chrome.runtime.sendMessage({ action: 'setSelectedFolder', folderId: folderSelect.value });
 });
 
 startBtn.addEventListener('click', () => {
@@ -66,14 +73,15 @@ startBtn.addEventListener('click', () => {
     }
   });
 });
+
 prevBtn.addEventListener('click', () => chrome.runtime.sendMessage({ action: 'goPrev' }));
 nextBtn.addEventListener('click', () => chrome.runtime.sendMessage({ action: 'goNext' }));
 
-chrome.storage.sync.get(['surfleMode', 'started', 'randomMode'], d => {
-  const mode = d.surfleMode !== false;
-  surfleCheckbox.checked = mode;
+chrome.storage.sync.get(['surfleMode', 'started', 'randomMode'], data => {
+  const mode = data.surfleMode !== false;
+  surfleCheckbox.checked    = mode;
   bookmarksCheckbox.checked = !mode;
-  randomCheckbox.checked = d.randomMode || false;
-  updateUI(d.started || false);
+  randomCheckbox.checked    = data.randomMode || false;
+  updateUI(data.started || false);
   if (bookmarksCheckbox.checked) loadFolders();
 });
