@@ -18,7 +18,7 @@ A Webring is a loop or chain of websites connected together that you can easily 
 ---
 
 ## ℹ️ How to Install & Use
-Getting started with Surfle is super easy. Once we’re officially live in the Chrome Web Store, here’s how to install it:
+Getting started with Surfle is super easy and safe.
 
 ### 🔧 Install in Seconds
 
