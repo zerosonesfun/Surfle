@@ -48,9 +48,15 @@ Create a folder of bookmarks that your friends might like, name the folder webri
 
 ## ➕ Add Your Site to the Surfle Webring
 
-Want to join the Surfle webring and be part of a flow of cool, independent websites?
+Sites must meet the following criteria:
 
-To have a chance of being added, your website must be independent and niche (e.g. a site about bananas, or a forum for musicians). No nudity, violence, or illegal stuff.
+- [x] Must be independent/personal/blog/niche
+- [x] No nudity or extreme violence
+- [x] Website cannot have excessive ads/pops-ups
+- [x] No scams
+- [x] Must function
+
+If you meet the above criteria:
 
 [Reply to this discussion thread](https://github.com/zerosonesfun/Surfle/discussions/4), **OR**:
 
