@@ -56,11 +56,11 @@ Sites must meet the following criteria:
 - [x] No scams
 - [x] Must function
 
-If you meet the above criteria:
+To suggest a site:
 
 [Reply to this discussion thread](https://github.com/zerosonesfun/Surfle/discussions/4), **OR**:
 
-### 🌊 Super Simple Steps
+### 🌊 Create a Pull Request
 
 1. **Create a GitHub account**
    If you don’t have one yet, sign up here: [github.com/join](https://github.com/join)
