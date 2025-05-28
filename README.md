@@ -11,7 +11,7 @@ A Chromium Webring browser extension.
 
 A Webring is a loop or chain of websites connected together that you can easily browse through. Surfle has two modes:
 1. **Surfle Mode** - Browse through the official Surfle Webring.
-2. **Bookmarks Mode** - Any of your own bookmarks folders with "webring" in the name can be selected as the list of websites you browse through.
+2. **Bookmarks Mode** - Any of your own bookmarks folders with "Webring" in the name can be selected as the list of websites you browse through.
 
 [Join our discussions](https://github.com/zerosonesfun/Surfle/discussions)
 
@@ -35,14 +35,14 @@ Getting started with Surfle is super easy and safe.
 ### 🌀 Start Surfing
 
 1. Click the **Surfle** icon to open the popup.
-2. Toggle **Surfle Mode** on to surf the official webring.
-3. Or switch to **Bookmarks Mode** and pick your own webring folder. Any browser bookmarks folder with webring in the name is selectable.
+2. Toggle **Surfle Mode** on to surf the official Webring.
+3. Or switch to **Bookmarks Mode** and pick your own Webring folder. Any browser bookmarks folder with Webring in the name is selectable.
 4. Click **Start Surfle** and use keyboard arrows (← →) or clicks to navigate. Using the keyboard arrows is easiest, but you can also click 3 times quickly for next and 4 times quickly for previous.
 5. Check off **Random Mode** if you don't want to view the sites in order.
 
 ### 😎 Create a Webring Mix
 
-Create a folder of bookmarks that your friends might like, name the folder webring-whatever (the webring part is important), and export. Send it to a friend who also uses Surfle. How do you export? This could be a feature in a future version of Surfle, but for now you can search the Chrome Extension store for "export bookmarks" and use something [like this](https://chromewebstore.google.com/detail/bookmark-importexport/gdhpeilfkeeajillmcncaelnppiakjhn).
+Create a folder of bookmarks that your friends might like, name the folder Webring-whatever (the Webring part is important), and export. Send it to a friend who also uses Surfle. How do you export? This could be a feature in a future version of Surfle, but for now you can search the Chrome Extension store for "export bookmarks" and use something [like this](https://chromewebstore.google.com/detail/bookmark-importexport/gdhpeilfkeeajillmcncaelnppiakjhn).
 
 ---
 
@@ -70,9 +70,9 @@ To suggest a site:
    * At the top of this page, click the **Fork** button
    * This makes your own copy of the Surfle project where you can safely make changes
 
-3. **Edit `webring.json`**
+3. **Edit `Webring.json`**
 
-   * In your fork, find and open the `webring.json` file
+   * In your fork, find and open the `Webring.json` file
    * Click the pencil ✏️ icon to edit it
    * Add your site URL to the list, like this:
 
@@ -93,7 +93,7 @@ To suggest a site:
 
 5. **Commit your changes**
 
-   * Scroll down and write a quick message like: `Added my site to webring`
+   * Scroll down and write a quick message like: `Added my site to Webring`
    * Click **Commit changes**
 
 6. **Open a Pull Request**
