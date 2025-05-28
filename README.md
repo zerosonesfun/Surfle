@@ -73,7 +73,7 @@ To suggest a site:
 
 3. **Edit any `webring.json` file in the main repository**
 
-   * In your fork, find and open the `webring.json` file
+   * In your fork, find and open the `webring.json` file related to your site
    * Click the pencil ✏️ icon to edit it
    * Add your site URL to the list, like this:
 
