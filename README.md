@@ -59,7 +59,7 @@ Sites must meet the following criteria:
 
 To suggest a site:
 
-[Reply to this discussion thread](https://github.com/zerosonesfun/Surfle/discussions/4), **OR**:
+[Submit this form](https://tally.so/r/np1G81), **OR**:
 
 ### 🌊 Create a Pull Request
 
