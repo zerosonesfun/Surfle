@@ -9,9 +9,10 @@ A Chromium Webring browser extension.
 
 ---
 
-A Webring is a loop or chain of websites connected together that you can easily browse through. Surfle has two modes:
-1. **Surfle Mode** - Browse through the official Surfle Webring.
+A Webring is a loop or chain of websites connected together that you can easily browse through. Surfle has a few modes:
+1. **Surfle Mode** - Browse through any official Surfle Webring. Overtime, additional Webrings will be added and you can change to a different one from the Settings page (click on the settings cog wheel icon at the top right of the extension's main popup).
 2. **Bookmarks Mode** - Any of your own bookmarks folders with "Webring" in the name can be selected as the list of websites you browse through.
+3. Either mode can be surfed in order or you can check off **Random Mode** for a random experience.
 
 [Join our discussions](https://github.com/zerosonesfun/Surfle/discussions)
 
@@ -42,7 +43,7 @@ Getting started with Surfle is super easy and safe.
 
 ### 😎 Create a Webring Mix
 
-Create a folder of bookmarks that your friends might like, name the folder Webring-whatever (the Webring part is important), and export. Send it to a friend who also uses Surfle. How do you export? This could be a feature in a future version of Surfle, but for now you can search the Chrome Extension store for "export bookmarks" and use something [like this](https://chromewebstore.google.com/detail/bookmark-importexport/gdhpeilfkeeajillmcncaelnppiakjhn).
+Create a folder of bookmarks that your friends might like, name the folder Webring-whatever (the Webring part is important), and export it from the Settings page. Send it to friends, and they can import the json text also via the Settings page. Now they can surf your suggested bookmarks. It's like sharing a music mixtape, but websites.
 
 ---
 
@@ -70,9 +71,9 @@ To suggest a site:
    * At the top of this page, click the **Fork** button
    * This makes your own copy of the Surfle project where you can safely make changes
 
-3. **Edit `Webring.json`**
+3. **Edit any `webring.json` file in the main repository**
 
-   * In your fork, find and open the `Webring.json` file
+   * In your fork, find and open the `webring.json` file
    * Click the pencil ✏️ icon to edit it
    * Add your site URL to the list, like this:
 
