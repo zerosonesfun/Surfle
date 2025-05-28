@@ -47,7 +47,7 @@ Create a folder of bookmarks that your friends might like, name the folder Webri
 
 ---
 
-## ➕ Add Your Site to the Surfle Webring
+## ➕ Add Your Site to a Surfle Webring
 
 Sites must meet the following criteria:
 
