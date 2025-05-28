@@ -9,6 +9,8 @@ A Chromium Webring browser extension.
 
 ---
 
+[![Watch the video](https://img.youtube.com/vi/Z0RdZjxNUcQ/0.jpg)](https://www.youtube.com/watch?v=Z0RdZjxNUcQ)
+
 A Webring is a loop or chain of websites connected together that you can easily browse through. Surfle has a few modes:
 1. **Surfle Mode** - Browse through any official Surfle Webring. Overtime, additional Webrings will be added and you can change to a different one from the Settings page (click on the settings cog wheel icon at the top right of the extension's main popup).
 2. **Bookmarks Mode** - Any of your own bookmarks folders with "Webring" in the name can be selected as the list of websites you browse through.
