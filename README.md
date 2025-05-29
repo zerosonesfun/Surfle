@@ -5,7 +5,7 @@ A Chromium Webring browser extension.
 
 [Install Surfle](https://chromewebstore.google.com/detail/surfle/nhejdgahknojgpbljmckhcmgdkelmknn) (Desktop only)
 
-[Use the bookmarklet](https://github.com/zerosonesfun/Surfle/discussions/5) (Mobile)
+[Web Version](https://surfle.neocities.org/) (For those who don't want to install a browser extension)
 
 ---
 ## 💿 Demo (click image)
