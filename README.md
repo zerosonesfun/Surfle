@@ -8,7 +8,7 @@ A Chromium Webring browser extension.
 [Use the bookmarklet](https://github.com/zerosonesfun/Surfle/discussions/5) (Mobile)
 
 ---
-## 💿 Demo (click image) (now.)
+## 💿 Demo (click image)
 [![Watch the video](https://img.youtube.com/vi/Z0RdZjxNUcQ/0.jpg)](https://www.youtube.com/watch?v=Z0RdZjxNUcQ)
 
 A Webring is a loop or chain of websites connected together that you can easily browse through. Surfle has a few modes:
