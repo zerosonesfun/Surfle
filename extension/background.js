@@ -42,7 +42,7 @@ async function fetchWebring() {
 
   // 2) Fetch that JSON
   try {
-    const url = `https://raw.githubusercontent.com/zerosonesfun/Surfle/main/${webringFile}`;
+    const url = `https://cdn.jsdelivr.net/gh/zerosonesfun/Surfle/${webringFile}`;
     const res = await fetch(url);
     const data = await res.json();
     sites = Array.isArray(data) ? data : [];
