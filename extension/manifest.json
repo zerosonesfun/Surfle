@@ -13,7 +13,8 @@
   "host_permissions": [
     "https://api.github.com/repos/zerosonesfun/Surfle/contents/*",
     "https://raw.githubusercontent.com/zerosonesfun/Surfle/*",
-    "https://cdn.jsdelivr.net/gh/zerosonesfun/Surfle/"
+    "https://cdn.jsdelivr.net/gh/zerosonesfun/Surfle/*",
+    "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
   ],
   "action": {
     "default_popup": "popup.html",
