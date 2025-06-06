@@ -42,7 +42,7 @@ async function fetchWebring(forceRefresh = false) {
 
   // 2) Fetch that JSON
   try {
-    let url = `https://cdn.jsdelivr.net/gh/zerosonesfun/Surfle/${webringFile}`;
+    let url = `https://cdn.jsdelivr.net/gh/zerosonesfun/Surfle@latest/${webringFile}`;
     let fetchOptions = undefined;
     if (forceRefresh) {
       url += `?cb=${Date.now()}`;
