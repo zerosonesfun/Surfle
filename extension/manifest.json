@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Surfle",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Effortlessly surf through a modern webring or your bookmarks with keyboard and click navigation.",
   "permissions": [
     "bookmarks",
