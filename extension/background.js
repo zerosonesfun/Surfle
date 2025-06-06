@@ -35,15 +35,20 @@ function getChildrenAsync(id) {
 }
 
 // Always reload the correct file before fetching
-async function fetchWebring() {
+async function fetchWebring(forceRefresh = false) {
   // 1) Read the latest selected filename
   const stored = await getFromStorage('webringFile');
   webringFile = stored || DEFAULT_WEBRING;
 
   // 2) Fetch that JSON
   try {
-    const url = `https://cdn.jsdelivr.net/gh/zerosonesfun/Surfle/${webringFile}`;
-    const res = await fetch(url);
+    let url = `https://cdn.jsdelivr.net/gh/zerosonesfun/Surfle/${webringFile}`;
+    let fetchOptions = undefined;
+    if (forceRefresh) {
+      url += `?cb=${Date.now()}`;
+      fetchOptions = { cache: "no-store" };
+    }
+    const res = await fetch(url, fetchOptions);
     const data = await res.json();
     sites = Array.isArray(data) ? data : [];
   } catch (e) {
@@ -144,7 +149,8 @@ async function toggleStart() {
   if (!started) {
     // Always use the latest file from storage
     webringFile = await getFromStorage('webringFile') || DEFAULT_WEBRING;
-    await fetchWebring();
+    // Force refresh cache when starting Surfle
+    await fetchWebring(true);
     if (!surfleMode) await loadBookmarks();
     started = true;
     await setInStorage({ started });
