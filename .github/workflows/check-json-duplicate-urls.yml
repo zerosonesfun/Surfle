@@ -1,0 +1,17 @@
+name: Check JSON URL Duplicates
+
+on:
+  push:
+    paths:
+      - '*.json'
+  pull_request:
+
+jobs:
+  url-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run URL check script
+        run: python .github/scripts/check_json_urls.py
