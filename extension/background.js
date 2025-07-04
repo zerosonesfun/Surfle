@@ -10,6 +10,8 @@ let started = false;
 let randomMode = false;
 let historySites = [];
 let historyPos = -1;
+let currentIndex = 0;
+let lastRandomSite = null;
 let webringFile = DEFAULT_WEBRING;
 
 // Promise wrappers for chrome APIs
@@ -57,20 +59,32 @@ async function fetchWebring(forceRefresh = false) {
   }
 }
 
-// Find bookmark folders named *webring*
+// Find all bookmark folders, listing those with 'webring' in the name first
 async function findWebringFolders() {
   try {
     const roots = await getTreeAsync();
-    const folders = [];
+    const webringFolders = [];
+    const otherFolders = [];
     (function recurse(nodes) {
       for (const n of nodes) {
-        if (!n.url && n.title.toLowerCase().includes('webring')) {
-          folders.push({ id: n.id, title: n.title });
+        if (!n.url) {
+          if (n.title.toLowerCase().includes('webring')) {
+            webringFolders.push({ id: n.id, title: n.title });
+          } else if (n.title && n.title.trim() !== '') {
+            otherFolders.push({ id: n.id, title: n.title });
+          }
         }
         if (n.children) recurse(n.children);
       }
     })(roots);
-    return folders;
+    // Remove duplicates (in case of overlap)
+    const seen = new Set();
+    const allFolders = [...webringFolders, ...otherFolders].filter(f => {
+      if (seen.has(f.id)) return false;
+      seen.add(f.id);
+      return true;
+    });
+    return allFolders;
   } catch (e) {
     console.error('findWebringFolders error', e);
     return [];
@@ -94,11 +108,43 @@ async function loadBookmarks() {
   }
 }
 
-function getRandomIndex(max) {
-  return Math.floor(Math.random() * max);
+function getRandomIndex(max, excludeIndex = -1) {
+  if (max <= 1) return 0;
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * max);
+  } while (idx === excludeIndex);
+  return idx;
 }
 
-function openNext() {
+async function openFirst() {
+  if (!started) return;
+
+  if (randomMode) {
+    const pool = surfleMode ? sites : bookmarksSites.map(b => b.url);
+    if (pool.length === 0) return;
+    
+    const idx = getRandomIndex(pool.length);
+    const selectedSite = pool[idx];
+    lastRandomSite = selectedSite;
+    historySites = [selectedSite];
+    historyPos = 0;
+    chrome.tabs.update({ url: historySites[historyPos] });
+  } else {
+    if (surfleMode && sites.length) {
+      historyPos = -1;
+      await setInStorage({ currentIndex });
+      chrome.tabs.update({ url: sites[currentIndex] });
+    }
+    if (!surfleMode && bookmarksSites.length) {
+      historyPos = -1;
+      await setInStorage({ currentIndex });
+      chrome.tabs.update({ url: bookmarksSites[currentIndex].url });
+    }
+  }
+}
+
+async function openNext() {
   if (!started) return;
 
   if (randomMode) {
@@ -106,8 +152,18 @@ function openNext() {
       historyPos++;
     } else {
       const pool = surfleMode ? sites : bookmarksSites.map(b => b.url);
-      const idx = getRandomIndex(pool.length);
-      historySites.push(pool[idx]);
+      if (pool.length === 0) return;
+      
+      // Find the index of the last site to avoid repetition
+      let excludeIndex = -1;
+      if (lastRandomSite && pool.length > 1) {
+        excludeIndex = pool.indexOf(lastRandomSite);
+      }
+      
+      const idx = getRandomIndex(pool.length, excludeIndex);
+      const selectedSite = pool[idx];
+      lastRandomSite = selectedSite;
+      historySites.push(selectedSite);
       historyPos++;
     }
     chrome.tabs.update({ url: historySites[historyPos] });
@@ -115,17 +171,19 @@ function openNext() {
     if (surfleMode && sites.length) {
       historyPos = -1;
       currentIndex = (currentIndex + 1) % sites.length;
+      await setInStorage({ currentIndex });
       chrome.tabs.update({ url: sites[currentIndex] });
     }
     if (!surfleMode && bookmarksSites.length) {
       historyPos = -1;
       currentIndex = (currentIndex + 1) % bookmarksSites.length;
+      await setInStorage({ currentIndex });
       chrome.tabs.update({ url: bookmarksSites[currentIndex].url });
     }
   }
 }
 
-function openPrev() {
+async function openPrev() {
   if (!started) return;
 
   if (randomMode) {
@@ -136,10 +194,12 @@ function openPrev() {
   } else {
     if (surfleMode && sites.length) {
       currentIndex = (currentIndex - 1 + sites.length) % sites.length;
+      await setInStorage({ currentIndex });
       chrome.tabs.update({ url: sites[currentIndex] });
     }
     if (!surfleMode && bookmarksSites.length) {
       currentIndex = (currentIndex - 1 + bookmarksSites.length) % bookmarksSites.length;
+      await setInStorage({ currentIndex });
       chrome.tabs.update({ url: bookmarksSites[currentIndex].url });
     }
   }
@@ -157,7 +217,8 @@ async function toggleStart() {
     historySites = [];
     historyPos = -1;
     currentIndex = 0;
-    openNext();
+    lastRandomSite = null;
+    openFirst();
   } else {
     started = false;
     await setInStorage({ started });
@@ -181,12 +242,13 @@ chrome.runtime.onStartup.addListener(fetchWebring);
 
 // Load saved state & fetch initial list
 chrome.storage.sync.get(
-  ['surfleMode','selectedFolderId','started','randomMode','webringFile'],
+  ['surfleMode','selectedFolderId','started','randomMode','webringFile','currentIndex'],
   async data => {
     surfleMode = data.surfleMode ?? true;
     selectedFolderId = data.selectedFolderId || null;
     started = data.started ?? false;
     randomMode = data.randomMode ?? false;
+    currentIndex = data.currentIndex ?? 0;
     webringFile = data.webringFile || DEFAULT_WEBRING;
 
     if (!surfleMode && selectedFolderId) await loadBookmarks();
@@ -222,11 +284,11 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         sendResponse({ started });
         break;
       case 'goNext':
-        openNext();
+        await openNext();
         sendResponse({ success: true });
         break;
       case 'goPrev':
-        openPrev();
+        await openPrev();
         sendResponse({ success: true });
         break;
       case 'setWebringFile':

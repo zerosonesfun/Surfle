@@ -31,7 +31,9 @@
 
   <label for="importArea">Import JSON text from your export file:</label>
   <textarea id="importArea" placeholder="Paste JSON here…"></textarea>
+  <input type="file" id="importFile" accept="application/json">
   <button id="importBtn">Import Bookmarks</button>
+  <div id="importError" style="color:red;display:none;"></div>
 
   <script src="settings.js"></script>
 </body>
