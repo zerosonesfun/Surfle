@@ -13,7 +13,7 @@ A Chromium Webring browser extension that lets you effortlessly discover website
 
 A Webring is a loop or chain of websites connected together that you can easily browse through. Surfle has a few modes:
 1. **Surfle Mode** - Browse through any official Surfle Webring. Overtime, additional Webrings will be added and you can change to a different one from the Settings page (click on the settings cog wheel icon at the top right of the extension's main popup).
-2. **Bookmarks Mode** - Any of your own bookmarks folders with "Webring" in the name can be selected as the list of websites you browse through.
+2. **Bookmarks Mode** - Any of your own bookmarks folders can be selected as the list of websites you browse through.
 3. Either mode can be surfed in order or you can check off **Random Mode** for a random experience.
 
 [Join our discussions](https://github.com/zerosonesfun/Surfle/discussions)
@@ -39,13 +39,13 @@ Getting started with Surfle is super easy and safe.
 
 1. Click the **Surfle** icon to open the popup.
 2. Toggle **Surfle Mode** on to surf the official Webring.
-3. Or switch to **Bookmarks Mode** and pick your own Webring folder. Any browser bookmarks folder with Webring in the name is selectable.
+3. Or switch to **Bookmarks Mode** and pick your own bookmarks folder.
 4. Click **Start Surfle** and use keyboard arrows (← →) or clicks to navigate. Using the keyboard arrows is easiest, but you can also click 3 times quickly for next and 4 times quickly for previous.
 5. Check off **Random Mode** if you don't want to view the sites in order.
 
 ### 😎 Create a Webring Mix
 
-Create a folder of bookmarks that your friends might like, name the folder Webring-whatever (the Webring part is important), and export it from the Settings page. Send it to friends, and they can import the json text also via the Settings page. Now they can surf your suggested bookmarks. It's like sharing a music mixtape, but websites.
+Create a folder of bookmarks that your friends might like and export it from the Settings page. Send it to friends and they can import the file via the Settings page. Now they can surf your suggested bookmarks. It's like sharing a music mixtape, but websites!
 
 ---
 
