@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Surfle</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <style>
+    body { position: relative; font-family: system-ui, sans-serif; width:240px; padding:10px; }
+    #settingsBtn {
+      position: absolute; top: -5px; right: 8px;
+      width: 20px; height: 20px; cursor: pointer;
+    }
+    label, select, button { display:block; margin:8px 0; width:100%; }
+    select, button { padding:6px; }
+    button { font-weight:bold; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <!-- Settings Cog -->
+  <svg id="settingsBtn" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65
+      1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4
+      0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2
+      2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65
+      1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1
+      1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65
+      1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2
+      2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0
+      1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0
+      0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0
+      4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+  </svg>
+
+  <!-- Main UI -->
+  <label><input type="checkbox" id="surfleMode"> Surfle Mode (Webring)</label>
+  <label><input type="checkbox" id="bookmarksMode"> Bookmarks Mode</label>
+  <select id="bookmarksFolderSelect" style="display:none;"></select>
+  <label><input type="checkbox" id="randomMode"> Random Mode</label>
+  <button id="startBtn">Start Surfle</button>
+  <button id="prevBtn" disabled>Previous</button>
+  <button id="nextBtn" disabled>Next</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
